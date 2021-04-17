@@ -6,7 +6,7 @@ The extra-terrestrial menace has come to Earth and we here at `ALIENS-R-REAL` ha
 
 There is just one tiny problem though...the collection is too large to search through manually. Even the most dedicated followers are complaining that they are having trouble locating specific reports in this mess.
 
-This project provides a code that will create a table dynamically based upon a [provided dataset](StarterCode/static/js/data.js). Users should be able to filter the table data for specific values. 
+This project provides a code that will create a table dynamically based upon a [provided dataset](UFO-level-1/static/js/data.js). Users should be able to filter the table data for specific values. 
 
 This code uses JavaScript, HTML, and CSS, and D3.js on our web pages. 
 
