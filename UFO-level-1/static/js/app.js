@@ -53,19 +53,20 @@ function runEnter() {
   var inputValue = inputElement.property("value");
 
   console.log(inputValue);
-  // console.log(tableData);
   
   var filteredData = tableData.filter(ufoReport => ufoReport.datetime === inputValue); 
   
   console.log(filterdData);
 
-  tbody.html('')
+  buildTable(filteredData)
 
-  filteredData.forEach((ufoReport) => {
-    var row = tbody.append("tr");
-    Object.entires(ufoReport).forEach(([key, value]) => {
-      var cell = row.append("td");
-      cell.text(value);
-    })
-  })
+  // tbody.html('')
+
+  // filteredData.forEach((ufoReport) => {
+  //   var row = tbody.append("tr");
+  //   Object.entires(ufoReport).forEach(([key, value]) => {
+  //     var cell = row.append("td");
+  //     cell.text(value);
+  //   })
+  // })
 }
