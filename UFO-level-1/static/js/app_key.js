@@ -30,8 +30,7 @@ function handleClick() {
   var date = d3.select("#datetime").property("value");
   let filteredData = tableData;
 
-  // Check to see if a date was entered and filter the
-  // data using that date.
+  // Filter the data using date entered
   if (date) {
     filteredData = filteredData.filter(row => row.datetime === date);
   }
