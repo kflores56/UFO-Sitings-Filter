@@ -56,41 +56,43 @@ function runEnter() {
   console.log(inputValue);
   console.log(tableData);
   
-  var filteredData = tableData.filter(ufo => ufo.datetime === inputValue); 
+  var filteredData = tableData.filter(ufoReport => ufoReport.datetime === inputValue); 
   
   console.log(filterdData);
 
-  // // Step 1: Use `Object.entries` to console.log each ufo report
-  // filterdData.forEach(function(ufoReport) {
-  //   Object.entries(ufoReport).forEach(function([key, value]) {
-  //   });
-  // });
+  // Step 1: Use `Object.entries` to console.log each ufo report
+  filterdData.forEach(function(ufoReport) {
+    Object.entries(ufoReport).forEach(function([key, value]) {
+    });
+  });
 
-  // // Step 2: Use d3 to append 1 cell per ufo report
-  // filterdData.forEach(function(ufoReport) {
-  //   var row = tbody.append("tr");
-  //   Object.entries(ufoReport).forEach(function([key, value]) {
-  //   });
-  // });
+  // Step 2: Use d3 to append 1 cell per ufo report
+  filterdData.forEach(function(ufoReport) {
+    var row = tbody.append("tr");
+    Object.entries(ufoReport).forEach(function([key, value]) {
+    });
+  });
 
-  // // Step 3: Use d3 to update each cell  with ufo report 
-  // filterdData.forEach(function(ufoReport) {
-  //   console.log(ufoReport);
-  //   var row = tbody.append("tr");
-  //   Object.entries(ufoReport).forEach(function([key, value]) {
-  //     console.log(key, value);
-  //     // Append a cell to the row for each record
-  //     // in the ufo report
-  //     var cell = row.append("td");
-  //     cell.text(value);
-  //   });
-  // }); 
-
-  filteredData.forEach((ufoReport) => {
-    var row = tableData.append("tr");
-    Object.entires(ufoReport).forEach(([key, value]) => {
+  // Step 3: Use d3 to update each cell  with ufo report 
+  filterdData.forEach(function(ufoReport) {
+    console.log(ufoReport);
+    var row = tbody.append("tr");
+    Object.entries(ufoReport).forEach(function([key, value]) {
+      console.log(key, value);
+      // Append a cell to the row for each record
+      // in the ufo report
       var cell = row.append("td");
       cell.text(value);
-    })
-  })
+    });
+  }); 
+
+  // tbody.html('')
+
+  // filteredData.forEach((ufoReport) => {
+  //   var row = tbody.append("tr");
+  //   Object.entires(ufoReport).forEach(([key, value]) => {
+  //     var cell = row.append("td");
+  //     cell.text(value);
+  //   })
+  // })
 }
