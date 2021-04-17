@@ -1,24 +1,28 @@
 // from data.js
 var tableData = data;
 
-// Get a reference to the table body
+// set variables 
 var tbody = d3.select("tbody");
+var button = d3.select("#filter-btn");
+var clearButton = d3.select("#clear-btn");
+var form = d3.select("#form");
 
-// Use `Object.entries` to console.log each ufo report
+////CREATE TABLE////
+
+// Step 1: Use `Object.entries` to console.log each ufo report
 data.forEach(function(ufoReport) {
   Object.entries(ufoReport).forEach(function([key, value]) {
   });
 });
 
-// Use d3 to append 1 cell per ufo report
+// Step 2: Use d3 to append 1 cell per ufo report
 data.forEach(function(ufoReport) {
   var row = tbody.append("tr");
-
   Object.entries(ufoReport).forEach(function([key, value]) {
   });
 });
 
-// Use d3 to update each cell  with ufo report 
+// Step 3: Use d3 to update each cell  with ufo report 
 data.forEach(function(ufoReport) {
   console.log(ufoReport);
   var row = tbody.append("tr");
@@ -31,12 +35,7 @@ data.forEach(function(ufoReport) {
   });
 });
 
-
-// Select the button
-var button = d3.select("#filter-btn");
-
-// Select the form
-var form = d3.select("#form");
+////FILTER TABLE////
 
 // Create event handlers 
 button.on("click", runEnter);
@@ -52,15 +51,40 @@ function runEnter() {
     var inputElement = d3.select("#datetime");
 
     // Get the value property of the input element
-  var inputValue = inputElement.property("value");
+    var inputValue = inputElement.property("value");
 
-  console.log("date entered:", inputValue);
+  console.log(inputValue);
+  console.log(tableData);
   
   var filteredData = tableData.filter(ufo => ufo.datetime === inputValue); 
   
-  console.log('filteredData:', filterdData);
+  console.log(filterdData);
 
-  tableData.html('')  
+  // // Step 1: Use `Object.entries` to console.log each ufo report
+  // filterdData.forEach(function(ufoReport) {
+  //   Object.entries(ufoReport).forEach(function([key, value]) {
+  //   });
+  // });
+
+  // // Step 2: Use d3 to append 1 cell per ufo report
+  // filterdData.forEach(function(ufoReport) {
+  //   var row = tbody.append("tr");
+  //   Object.entries(ufoReport).forEach(function([key, value]) {
+  //   });
+  // });
+
+  // // Step 3: Use d3 to update each cell  with ufo report 
+  // filterdData.forEach(function(ufoReport) {
+  //   console.log(ufoReport);
+  //   var row = tbody.append("tr");
+  //   Object.entries(ufoReport).forEach(function([key, value]) {
+  //     console.log(key, value);
+  //     // Append a cell to the row for each record
+  //     // in the ufo report
+  //     var cell = row.append("td");
+  //     cell.text(value);
+  //   });
+  // }); 
 
   filteredData.forEach((ufoReport) => {
     var row = tableData.append("tr");
