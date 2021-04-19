@@ -54,19 +54,23 @@ function runEnter() {
 
   console.log(inputValue);
   
-  var filteredData = tableData.filter(ufoReport => ufoReport.datetime === inputValue); 
-  
-  console.log(filterdData);
+  var filteredData = tableData.filter(ufoReport => ufoReport.datetime === inputValue);
 
-  buildTable(filteredData)
+  console.log(filteredData);
 
-  // tbody.html('')
+////CREATE NEW TABLE WITH FILTERED DATA////
 
-  // filteredData.forEach((ufoReport) => {
-  //   var row = tbody.append("tr");
-  //   Object.entires(ufoReport).forEach(([key, value]) => {
-  //     var cell = row.append("td");
-  //     cell.text(value);
-  //   })
-  // })
-}
+  tbody.html('')
+
+  filteredData.forEach((ufoReport) => {
+    var row = tbody.append("tr");
+    Object.entires(ufoReport).forEach(([key, value]) => {
+      var cell = row.append("td");
+      cell.text(value);
+      })
+    })
+  }
+
+// Attach an event to listen for the form button
+// d3.selectAll("#filter-btn").on("click", runEnter);
+
