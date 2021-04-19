@@ -60,17 +60,19 @@ function runEnter() {
 
 ////CREATE NEW TABLE WITH FILTERED DATA////
 
+  // Clear out data in current chart
   tbody.html('')
 
-  filteredData.forEach((ufoReport) => {
+  // Build new chart
+  filteredData.forEach(function(ufoReport) {
+    console.log(ufoReport);
     var row = tbody.append("tr");
-    Object.entires(ufoReport).forEach(([key, value]) => {
+    Object.entries(ufoReport).forEach(function([key, value]) {
+      console.log(key, value);
+      // Append a cell to the row for each record
+      // in the ufo report
       var cell = row.append("td");
       cell.text(value);
-      })
-    })
-  }
-
-// Attach an event to listen for the form button
-// d3.selectAll("#filter-btn").on("click", runEnter);
-
+    });
+  });
+};
